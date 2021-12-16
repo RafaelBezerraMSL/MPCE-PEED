@@ -5,9 +5,9 @@ Interface PEED para MPCE utilizando Flask
 
 Requirements:
 
-pip install Flask\n
-pip install Flask-Login
-pip install Flask-SQLAlchemy
-pip install Flask-WTF
-pip install WTForms
-pip install SQLAlchemy
+pip install Flask  
+pip install Flask-Login  
+pip install Flask-SQLAlchemy  
+pip install Flask-WTF  
+pip install WTForms  
+pip install SQLAlchemy  
