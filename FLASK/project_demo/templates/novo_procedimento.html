@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block title %}MPCE - Novo Procedimento{% endblock %}
+{% block content %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/novo_procedimento.css') }}">
+<!--div para inserção do titulo de procedimento de investigação e suas propriedades-->
+<div style="padding-top: 6%; margin-left: 7%; font-size: 1.1em;">
+    <div style="margin-left: 3.7em; line-height: 5%;" class="formatacaoTextoFormulario">Novo Procedimento de Investigação</div>
+    <span class="definicaoBotao bi bi-chevron-left"></span><span style="margin-left: 1.5%;">Informações do Procedimento de Investigação</span><br/>
+</div>
+<!--parte que será feita a implementação do breadcrumb-->
+<div style="padding-top: 3%; margin-left: 7%;" class="menuSeletorPassos">
+    <nav class="formatacaoTextoFormulario" style="margin-right: 12%; margin-bottom: -2%; margin-top: -1%; font-size: 0.9em;">
+        <ol class="breadcrumb">
+            <span class="bi bi-box" style="margin-right: 8px; line-height: 55px; color: #0B8149"></span><li class="breadcrumb-item active" aria-label="page">Informações do Procedimento</a></li>
+            <span class="bi bi-box" style="margin-right: 8px; line-height: 55px;"></span><li class="breadcrumb-item"><a href="">Importar Fontes de Evidência<br/>(Opcional)</a></li>
+            <span class="bi bi-box" style="margin-right: 8px; line-height: 55px;"></span><li class="breadcrumb-item"><a href="">Revisar Novo Procedimento</a></li>
+        </ol>
+    </nav>
+</div>
+<!--parte que e reservada ao menu central com botão de voltar e avançar-->
+<div style="padding-top: 3%;" class="menuCentral">
+    <!--definição de botão avançar e definição personalizada para 0.8em para fonte e margen para o icone-->
+    <div>
+        <span class="formatacaoTextoFormulario definicaoBotao bi bi-arrow-left" style="border-radius: 4px; width: 85px; font-size: 0.9em;"><span style="margin-left: 8%;">Voltar</span></span>
+    </div>
+    <div>
+        Sobre o Procedimento<br/>
+        <div class="formatacaoTextoFormulario" style="font-size:0.9em;">
+            Preencha as informações abaixo com os dados do procedimento de investigação. Os campos com um asterísco são obrigatórios.<br/>
+            Após preenchido, clique em Avançar
+        </div>
+    </div>
+    <!--definição de botão avançar e definição personalizada para 0.8em para fonte e margen para o icone-->
+    <div>
+        <span class="definicaoBotao" style="border-radius: 4px; width: 85px; font-size: 0.9em;">Avançar<span class="bi bi-arrow-right" style="margin-left: 8%; font-size: 1.2em;"></span></span>
+    </div>
+</div>
+<!--seção de criação do topo da parte do form com ajustes de alinhamento com tamanhos relativos para melhor adequação do viewport-->
+<div style="padding-top: 3%; margin-left: 7%;" class="topoMenuCadastro">
+    <span style="font-size: 1.2em; line-height: -10%;">Informações</span>
+    <span class="formatacaoTextoFormulario">Descreva este procedimento de investigação.</span>
+</div>
+<!--espaço form com ajustes de enquadramento relativo para encaixe do design sugerido-->
+<div style="padding-top: 3%; margin-left: 7%;" class="topoMenuCadastro">
+    <div class="container" style="margin-top: -2%; margin-left: -1%;">
+        <div class="row">
+            <div class="col-md-4">
+                <label class="formatacaoTextoFormulario" style="font-size: 0.9em; font-weight: bold;">ID do procedimento</label>
+                <input type="text" class="form-control">
+                <span class="formatacaoTextoFormulario" style="font-size: 0.7em;">Este campo e opcional. Deve conter ID do SAJ caso seja preenchido</span>
+            </div>
+            <div class="col-md-8" style="padding-right: 0;">
+                <label class="formatacaoTextoFormulario" style="font-size: 0.9em; font-weight: bold;">Titulo do Procedimento*</label>
+                <input type="text" class="form-control" style="width: 90%;">
+                <span class="formatacaoTextoFormulario" style="font-size: 0.7em;">Opte por um título que seja de fácil identificação pelos integrantes envolvidos neste procedimento.</span>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 2%; margin-left: -1%;">
+        <div class="row">
+            <div class="col-md-12">
+                <label class="formatacaoTextoFormulario" style="font-size: 0.9em; font-weight: bold;">Descrição*</label>
+                <textarea class="form-control" style="width: 94.5%;"></textarea>
+                <span class="formatacaoTextoFormulario" style="font-size: 0.7em;">Resuma os principais detalhes deste procedimento de investigação.</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--seção Investigados e Equipe-->
+<div style="padding-top: 3%; margin-left: 7%;" class="topoMenuCadastro">
+    <div class="container" style="margin-top: -2%; margin-left: -1%;">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="ladoInvestigados">
+                    <div>
+                        <span style="font-size: 1.2em;">Investigados</span><br/>
+                        <span class="formatacaoTextoFormulario" style="font-size: 0.65em;">Associe investigados ao procedimento. Útil para deletar todos os dados associados a um investigado</span>
+                    </div>
+                    <div>
+                        <span class="definicaoBotao bi bi-plus-circle-dotted" style="margin-left: -100%;"></span>
+                    </div>
+                </div>
+                <div style="border: 1px solid gray; height: 14em; width: 90%;">
+                    <table  class="table table-striped">
+                        <thead>
+                            <th>
+                                CPF/CNPQ:
+                            </th>
+                            <th>
+                                Nome:
+                            </th>
+                        </thead>
+                    </table>
+                    <div class="conteudoTabela">
+                        <img src="../static/pasta.png" width="20%">
+                        <div>
+                            Opa!
+                        </div>
+                        <div class="formatacaoTextoFormulario">
+                            Não há alvos registrados!
+                        </div>
+                        <div class="formatacaoTextoFormulario">
+                            Clique em + para registrar um novo alvo.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="ladoInvestigados">
+                    <div>
+                        <span style="font-size: 1.2em;">Integrantes da Equipe</span><br/>
+                        <span class="formatacaoTextoFormulario" style="font-size: 0.65em;">Defina os integrantes da sua equipe e suas respectivas funções.</span>
+                    </div>
+                    <div>
+                        <span class="definicaoBotao bi bi-plus-circle-dotted" style="margin-left: -100%;"></span>
+                    </div>
+                </div>
+                <div style="border: 1px solid gray; height: 14em; width: 91%;">
+                    <table  class="table table-striped">
+                        <thead>
+                            <th>
+                                ID:
+                            </th>
+                            <th>
+                                Nome:
+                            </th>
+                            <th>
+                                E-mail:
+                            </th>
+                            <th>
+                                Função:
+                            </th>
+                        </thead>
+                    </table>
+                    <div class="conteudoTabela">
+                        <img src="../static/pasta.png" width="15%">
+                        <div>
+                            Opa!
+                        </div>
+                        <div class="formatacaoTextoFormulario">
+                            Não há alvos registrados!
+                        </div>
+                        <div class="formatacaoTextoFormulario">
+                            Clique em + para registrar um novo alvo.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

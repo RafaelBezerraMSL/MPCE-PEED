@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "Roboto-Thin";
+    src: url("../Roboto-Thin.ttf");
+}
+
+@font-face {
+    font-family: "Roboto-Bold";
+    src: url("../Roboto-Bold.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto-Bold";
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+/*width de 99% para evitar quebrar o alinhamento vertical*/
+body{
+    width: 99%;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/*alinhamento da seção esquerda da página usando flex, centralizando os elementos e dando margem para agrupamento*/
+.ladoEsquerdo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-left: -10%;
+    height: 670px;
+}
+
+.tituloTopo{
+    font-family: "Roboto-Thin";
+    font-size: 1.8em;
+    color: #0B8149;
+    font-weight: 600;
+    margin-left: -13%;
+    margin-bottom: 1%;
+}
+.subtitulo{
+    font-size: 3em;
+    color: #0B8149;
+    line-height: 100%;
+}
+
+.ladoDireito{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0B8149;
+    margin-top: -0.3%;
+    height: 747px;
+    width: 102.5%;
+}
+
+.formatacaoTextoFormulario{
+    font-family: Roboto-Thin; 
+    font-size: 1.1em; 
+    font-weight: 700;
+}
+
+.botaoSubmit{
+    background-color: #0B8149;
+    color: white;
+}
+
+.formularioLogin{
+    border: 1px solid gray; 
+    margin-top: 5%;
+    margin-left: 6%; 
+    background-color: white; 
+    color: black; 
+    width: 70%; 
+    padding: 24px 24px; 
+    border-radius: 5%;
+    line-height: 250%;
+}
